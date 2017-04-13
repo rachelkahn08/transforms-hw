@@ -1,0 +1,94 @@
+* {
+  box-sizing: border-box;
+  background: #555; 
+}
+
+body, html {
+	height: 100%;
+	padding: 5px;
+}
+
+.gallery {
+	height: 100%;
+	width: 100%;
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+}
+
+.gallery-image {
+	height: 300px;
+	width: 300px;
+	transition: 2s;
+}
+
+.gallery-image-container {
+	height: 300px;
+	width: 300px;
+	margin: 5px;
+	transition: 2s;
+}
+
+#image1 {
+	overflow: hidden;
+}
+
+#image1:hover img {
+	transform: translate(-100%, -100%);
+}
+
+#image2:hover {
+	transform: rotate(720deg);
+	transform-origin: top right;
+}
+
+#image3:hover {
+	transform: scale(.25);
+}
+
+#image4:hover {
+	transform: skew(-60deg, 20deg);
+}
+
+#image5:hover {
+	animation-name: twinkle;
+	animation-duration: 5s;
+	animation-timing-function: linear;
+}
+
+#image6:hover {
+	transform: rotate(90deg) skew(20deg, 5deg) scale(2);
+}
+
+#image7:hover {
+	transform: translate(-100vw, -100vw) rotate(1440deg) scale(.1);
+	transition: 4s;
+}
+
+#image8:hover img {
+	animation-name: pinball;
+	animation-duration: 5s;
+	animation-timing-function: linear;
+}
+
+@keyframes twinkle {
+	0%, 100% { transform: scale(1) rotate(0deg); }
+	12.5%, 37.5%, 62.5%, 87.5% { transform: scale(1.45) rotate(720deg); }
+	25%, 50%, 75% { transform: scale(.55) rotate(0deg); }
+}
+
+@keyframes pinball {
+	0%, 100% { transform: none; }
+	10% { transform: translate(-80vw, -30vh) rotate(90deg); }
+	11% { transform: translate(-80vw, -30vh) rotate(70deg); }
+	20% { transform: translate(-60vw, -85vh) rotate(0deg); }
+	21% { transform: translate(-60vw, -85vh) rotate(-20deg); }
+	40% { transform: translate(-30vw, 15vh) rotate(-90deg); }
+	60%	{ transform: translate(0vw, -85vh) rotate(-20deg); }
+	61%	{ transform: translate(0vw, -85vh) rotate(0deg); }
+	80% { transform: translate(5vw, -20vh) rotate(20deg);}
+	81% { transform: translate(5vw, -20vh)  rotate(0deg); }
+	
+}
